@@ -15,9 +15,14 @@ class AppFonts {
     color: AppColors.mainColor,
   );
 
-  static TextStyle regular10Grey = TextStyle(
-    fontSize: 10.sp,
+  static TextStyle regular12Grey = TextStyle(
+    fontSize: 12.sp,
     fontWeight: FontWeight.w300,
     color: AppColors.kGrey,
+  );
+  static TextStyle semiBold16White = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w600,
+    color: AppColors.kWhite,
   );
 }
