@@ -1,4 +1,5 @@
-import 'package:doctorna/home_view.dart';
+import 'package:doctorna/core/consts/app_colors.dart';
+import 'package:doctorna/features/onBording/onboarding_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -15,8 +16,9 @@ class AppView extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.blue,
+          scaffoldBackgroundColor: AppColors.kWhite,
         ),
-        home: const HomeView(),
+        home: const OnboardingView(),
       ),
     );
   }
