@@ -7,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final TextEditingController? controller;
+  final Function(String?) validator;
   final String label;
   final VoidCallback? suffixIconFunction;
   final bool suffixIconShow;
@@ -17,12 +18,13 @@ class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
     super.key,
     this.controller,
+    required this.validator,
     required this.label,
     this.suffixIconFunction,
     this.suffixIconShow = false,
     this.obscureText = false,
     required this.keyBoard,
-    this.maxLength = 6,
+    this.maxLength = 50,
     this.filled = AppColors.kWhite,
   });
 
@@ -30,6 +32,7 @@ class CustomTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      validator: (value) => validator(value),
       keyboardType: keyBoard,
       inputFormatters: [LengthLimitingTextInputFormatter(maxLength)],
       cursorColor: AppColors.mainColor,

@@ -1,8 +1,9 @@
 import 'package:doctorna/core/consts/app_colors.dart';
-import 'package:doctorna/core/routing/app_router.dart';
-import 'package:doctorna/core/routing/routes.dart';
+import 'package:doctorna/core/route/app_router.dart';
+import 'package:doctorna/core/route/routes.dart';
 import 'package:doctorna/features/onBording/onboarding_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppView extends StatelessWidget {
@@ -17,6 +18,7 @@ class AppView extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         child: MaterialApp(
+          builder: EasyLoading.init(),
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
             primarySwatch: Colors.blue,

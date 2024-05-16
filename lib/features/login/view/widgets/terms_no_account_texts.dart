@@ -11,6 +11,7 @@ class TermsTextAndDontHaveAccount extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        40.verticalSpace,
         RichText(
           textAlign: TextAlign.center,
           text: TextSpan(
@@ -27,7 +28,7 @@ class TermsTextAndDontHaveAccount extends StatelessWidget {
             ],
           ),
         ),
-        30.verticalSpace,
+        10.verticalSpace,
         RichText(
           textAlign: TextAlign.center,
           text: TextSpan(
