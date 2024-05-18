@@ -14,20 +14,22 @@ class TermsTextAndDontHaveAccount extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        40.verticalSpace,
+        20.verticalSpace,
         RichText(
           textAlign: TextAlign.center,
           text: TextSpan(
             children: [
               TextSpan(
-                  text: 'By logging, you agree to our',
-                  style: AppFonts.semiBold14Grey),
+                text: 'By Registering, you agree to our',
+                style: AppFonts.semiBold14Grey,
+              ),
               TextSpan(
                   text: ' Terms & Conditions', style: AppFonts.semiBold14Black),
               TextSpan(text: ' and', style: AppFonts.semiBold14Grey),
               TextSpan(
-                  text: ' PrivacyPolicy.',
-                  style: AppFonts.semiBold14Black.copyWith(height: 1.5)),
+                text: ' PrivacyPolicy.',
+                style: AppFonts.semiBold14Black.copyWith(height: 1.5),
+              ),
             ],
           ),
         ),
@@ -37,13 +39,13 @@ class TermsTextAndDontHaveAccount extends StatelessWidget {
           text: TextSpan(
             children: [
               TextSpan(
-                  text: 'Dont\'t have an account? ',
-                  style: AppFonts.semiBold14Grey),
+                text: 'Do you have an account? ',
+                style: AppFonts.semiBold14Grey,
+              ),
               TextSpan(
                 recognizer: TapGestureRecognizer()
-                  ..onTap =
-                      () => context.pushReplacmentName(Routes.registerView),
-                text: 'Sign Up',
+                  ..onTap = () => context.pushReplacmentName(Routes.loginView),
+                text: 'Log In',
                 style: AppFonts.regular12Green,
               ),
             ],

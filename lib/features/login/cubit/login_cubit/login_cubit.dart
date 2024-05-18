@@ -1,7 +1,7 @@
 import 'package:doctorna/features/login/data/models/login_request_model.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:doctorna/features/login/controller/login_cubit/login_state.dart';
+import 'package:doctorna/features/login/cubit/login_cubit/login_state.dart';
 import 'package:doctorna/features/login/data/repos/login_repo.dart';
 
 class LoginCubit extends Cubit<LoginState> {
