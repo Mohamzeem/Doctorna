@@ -1,7 +1,8 @@
 import 'package:doctorna/core/route/routes.dart';
 import 'package:doctorna/features/home/home_view.dart';
 import 'package:doctorna/features/onBording/onboarding_view.dart';
-import 'package:doctorna/features/login/view/sign_in_view.dart';
+import 'package:doctorna/features/login/view/login_view.dart';
+import 'package:doctorna/features/register/view/register_view.dart';
 import 'package:flutter/material.dart';
 
 class AppRouter {
@@ -15,11 +16,15 @@ class AppRouter {
         );
       case Routes.loginView:
         return MaterialPageRoute(
-          builder: (_) => const SignInView(),
+          builder: (_) => const LoginView(),
         );
       case Routes.homeView:
         return MaterialPageRoute(
           builder: (_) => const HomeView(),
+        );
+      case Routes.registerView:
+        return MaterialPageRoute(
+          builder: (_) => const RegisterView(),
         );
 
       default:

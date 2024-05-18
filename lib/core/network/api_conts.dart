@@ -1,7 +1,7 @@
 class ApiConsts {
   static const String apiBaseUrl = 'https://vcare.integration25.com/api/';
   static const String apiLogIn = 'auth/login';
-  static const String apiSignUp = "auth/register";
+  static const String apiRegister = "auth/register";
 }
 
 class ApiErrors {

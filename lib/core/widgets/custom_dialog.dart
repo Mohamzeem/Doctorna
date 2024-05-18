@@ -13,7 +13,7 @@ class CustomDialog {
       barrierDismissible: true,
       barrierColor: Colors.transparent,
       builder: (context) {
-        Future.delayed(const Duration(seconds: 2), () => context.pop());
+        Future.delayed(const Duration(seconds: 1), () => context.pop());
         return AlertDialog(
           backgroundColor: isSuccess
               ? AppColors.mainColor.withOpacity(0.8)

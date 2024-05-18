@@ -20,7 +20,7 @@ class AppFonts {
   );
 
   static TextStyle regular12Grey = TextStyle(
-    fontSize: 12.sp,
+    fontSize: 14.sp,
     fontWeight: FontWeight.w300,
     color: AppColors.kGrey,
   );

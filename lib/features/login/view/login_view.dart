@@ -1,17 +1,17 @@
 import 'package:doctorna/core/app/dependency_injection.dart';
-import 'package:doctorna/features/login/controller/login_cubit/login_cubit.dart';
+import 'package:doctorna/features/login/cubit/login_cubit/login_cubit.dart';
 import 'package:doctorna/features/login/view/widgets/login_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SignInView extends StatefulWidget {
-  const SignInView({super.key});
+class LoginView extends StatefulWidget {
+  const LoginView({super.key});
 
   @override
-  State<SignInView> createState() => _SignInViewState();
+  State<LoginView> createState() => _LoginViewState();
 }
 
-class _SignInViewState extends State<SignInView> {
+class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
