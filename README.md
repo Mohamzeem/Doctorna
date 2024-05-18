@@ -1,4 +1,3 @@
-<<<<<<< register
 **login view** ✅
 ![Screenshot_1715878013](https://github.com/Mohamzeem/Doctorna/assets/108492019/1395826b-36f0-4558-b407-8cd527361f90)
  
@@ -8,4 +7,6 @@
 
 # login view ✅
 ![Screenshot_1715878013](https://github.com/Mohamzeem/Doctorna/assets/108492019/1395826b-36f0-4558-b407-8cd527361f90)
->>>>>>> dev
+
+# register view ✅
+![Screenshot_1716049574](https://github.com/Mohamzeem/Doctorna/assets/108492019/2fc777f9-0f66-4639-b503-601b49e41187)
