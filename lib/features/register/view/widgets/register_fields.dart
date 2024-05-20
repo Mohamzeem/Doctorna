@@ -121,7 +121,7 @@ class _RegisterFieldsState extends State<RegisterFields> {
                 }
               },
               controller: _cubit.confirmPasswordController,
-              label: 'Password',
+              label: 'Confirm Password',
               obscureText: obsecured,
               keyBoard: TextInputType.visiblePassword,
             ),
