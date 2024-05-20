@@ -33,11 +33,8 @@ dependencies:
   flutter_bloc: ^8.1.5
   equatable: ^2.0.5
   animate_do: ^3.3.4
-<<<<<<< Updated upstream
-=======
   flutter_native_splash: ^2.2.16
   firebase_core: ^2.31.0
->>>>>>> Stashed changes
 
 dev_dependencies:
   flutter_test:
