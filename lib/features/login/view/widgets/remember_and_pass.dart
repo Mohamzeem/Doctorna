@@ -43,7 +43,7 @@ class _RememberMeAndPasswordState extends State<RememberMeAndPassword> {
             onPressed: () {},
             child: Text(
               'Forgot Password?',
-              style: AppFonts.regular12Green,
+              style: AppFonts.regular14Main,
             ),
           ),
         ],

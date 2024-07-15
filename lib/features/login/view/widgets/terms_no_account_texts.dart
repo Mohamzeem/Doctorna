@@ -44,7 +44,7 @@ class TermsTextAndDontHaveAccount extends StatelessWidget {
                   ..onTap =
                       () => context.pushReplacmentName(Routes.registerView),
                 text: 'Sign Up',
-                style: AppFonts.regular12Green,
+                style: AppFonts.regular14Main,
               ),
             ],
           ),

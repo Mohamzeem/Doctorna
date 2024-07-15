@@ -20,13 +20,13 @@ class RegisterBody extends StatelessWidget {
             //^ welcome text
             Text(
               'Create Account',
-              style: AppFonts.bold24Green,
+              style: AppFonts.bold28Main,
             ),
             10.verticalSpace,
             //^ small text
             Text(
               'Sign up now and start exploring all that our app has to offer. We\'re excited to welcome you to our community!',
-              style: AppFonts.regular12Grey,
+              style: AppFonts.regular14Grey,
             ),
             15.verticalSpace,
             const RegisterFields(),

@@ -54,7 +54,7 @@ class BackGroundAndText extends StatelessWidget {
           right: 0,
           child: Text(
             'Best Doctor\nAppointment App',
-            style: AppFonts.bold32Green,
+            style: AppFonts.bold32Main,
             textAlign: TextAlign.center,
           ),
         ),

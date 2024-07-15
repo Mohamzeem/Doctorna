@@ -46,7 +46,7 @@ class CustomPasswordValidation extends StatelessWidget {
         6.horizontalSpace,
         Text(
           text,
-          style: AppFonts.regular12Green.copyWith(
+          style: AppFonts.regular14Main.copyWith(
             decoration: !hasValidated ? TextDecoration.lineThrough : null,
             decorationColor: AppColors.kGrey,
             decorationThickness: 2,

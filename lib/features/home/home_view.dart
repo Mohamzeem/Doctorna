@@ -1,4 +1,4 @@
-import 'package:doctorna/core/helpers/font_style.dart';
+import 'package:doctorna/features/home/widgets/home_body.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -6,13 +6,8 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text(
-          'HOME VIEW',
-          style: AppFonts.bold24Black,
-        ),
-      ),
+    return const Scaffold(
+      body: HomeBody(),
     );
   }
 }

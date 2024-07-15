@@ -39,8 +39,8 @@ class CustomTextFormField extends StatelessWidget {
       textInputAction: TextInputAction.done,
       obscureText: obscureText,
       maxLines: 1,
-      style: const TextStyle(
-          fontSize: 20,
+      style: TextStyle(
+          fontSize: 20.sp,
           color: AppColors.mainColor,
           fontWeight: FontWeight.w500),
       decoration: InputDecoration(
@@ -49,13 +49,14 @@ class CustomTextFormField extends StatelessWidget {
                 onTap: suffixIconFunction,
                 child: obscureText
                     ? const Icon(
-                        Icons.visibility,
+                        Icons.visibility_off,
                         color: AppColors.mainColor,
                       )
                     : const Icon(
-                        Icons.visibility_off,
+                        Icons.visibility,
                         color: AppColors.mainColor,
-                      ))
+                      ),
+              )
             : const SizedBox(),
         contentPadding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 12.h),
         fillColor: AppColors.kLightGrey,

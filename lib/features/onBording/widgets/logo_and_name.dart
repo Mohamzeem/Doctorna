@@ -1,3 +1,4 @@
+import 'package:doctorna/core/consts/app_colors.dart';
 import 'package:doctorna/core/helpers/font_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,13 +15,14 @@ class LogoAndName extends StatelessWidget {
       children: [
         Image.asset(
           'assets/images/logo.png',
+          color: AppColors.mainColor,
           height: 39.h,
           width: 39.w,
         ),
         10.horizontalSpace,
         Text(
           'Doctrona',
-          style: AppFonts.bold24Black,
+          style: AppFonts.bold28Black,
         )
       ],
     );

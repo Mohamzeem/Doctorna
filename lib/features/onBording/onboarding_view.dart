@@ -24,7 +24,7 @@ class OnboardingView extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
                 child: Text(
                   'Manage and schedule all of your medical appointments easily with Docdoc to get a new experience.',
-                  style: AppFonts.regular12Grey,
+                  style: AppFonts.regular14Grey,
                   textAlign: TextAlign.center,
                 ),
               ),

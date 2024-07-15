@@ -13,7 +13,7 @@ class AppView extends StatelessWidget {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: ScreenUtilInit(
-        designSize: const Size(375, 812),
+        designSize: const Size(411.42857142857144, 867.4285714285714),
         minTextAdapt: true,
         splitScreenMode: true,
         child: MaterialApp(
@@ -23,7 +23,7 @@ class AppView extends StatelessWidget {
             scaffoldBackgroundColor: AppColors.kWhite,
           ),
           home: const OnboardingView(),
-          initialRoute: Routes.onboardingView,
+          initialRoute: Routes.homeView,
           onGenerateRoute: AppRouter().generateRoute,
         ),
       ),

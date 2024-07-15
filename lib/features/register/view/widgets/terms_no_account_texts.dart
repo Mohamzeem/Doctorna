@@ -46,7 +46,7 @@ class TermsTextAndDontHaveAccount extends StatelessWidget {
                 recognizer: TapGestureRecognizer()
                   ..onTap = () => context.pushReplacmentName(Routes.loginView),
                 text: 'Log In',
-                style: AppFonts.regular12Green,
+                style: AppFonts.regular14Main,
               ),
             ],
           ),

@@ -1,3 +1,4 @@
+import 'package:doctorna/core/consts/app_colors.dart';
 import 'package:doctorna/core/helpers/animation.dart';
 import 'package:doctorna/core/helpers/font_style.dart';
 import 'package:doctorna/features/login/view/widgets/email_and_pass.dart';
@@ -22,20 +23,21 @@ class LoginBody extends StatelessWidget {
             //^ welcome text
             Text(
               'Welcome Back',
-              style: AppFonts.bold24Green,
+              style: AppFonts.bold28Main,
             ),
             10.verticalSpace,
             //^ small text
             Text(
               'We\'re excited to have you back, can\'t wait to see what you\'ve been up to since you last logged in.',
-              style: AppFonts.regular12Grey,
+              style: AppFonts.regular14Grey,
             ),
             20.verticalSpace,
             //^ doc image
             CustomFadeInDown(
               child: Center(
                 child: Image.asset(
-                  'assets/images/login_doc.png',
+                  'assets/images/medical-team.png',
+                  color: AppColors.mainColor,
                   height: 200.h,
                 ),
               ),

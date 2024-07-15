@@ -15,12 +15,12 @@ class DependencyInjector {
     Dio dio = DioFactory.getDio();
     di.registerLazySingleton<ApiServices>(() => ApiServices(dio));
 
-//^ login cubit
+//^ login cubit and repo
     di
       ..registerLazySingleton<LoginRepo>(() => LoginRepo(apiServices: di()))
       ..registerFactory<LoginCubit>(() => LoginCubit(repo: di()));
 
-//^ register cubit
+//^ register cubit and repo
     di
       ..registerLazySingleton<RegisterRepo>(
           () => RegisterRepo(apiServices: di()))
