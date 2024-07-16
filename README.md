@@ -1,12 +1,2 @@
-**login view** ✅
-![Screenshot_1715878013](https://github.com/Mohamzeem/Doctorna/assets/108492019/1395826b-36f0-4558-b407-8cd527361f90)
- 
-=======
 # onboarding view ✅ 
-![Simulator Screenshot - iPhone 15 Pro Max - 2024-05-14 at 18 17 58](https://github.com/Mohamzeem/Doctorna/assets/108492019/ec9212ad-b449-45e7-8dd1-1ca2a23a8631)
-
-# login view ✅
-![Screenshot_1715878013](https://github.com/Mohamzeem/Doctorna/assets/108492019/1395826b-36f0-4558-b407-8cd527361f90)
-
-# register view ✅
-![Screenshot_1716049574](https://github.com/Mohamzeem/Doctorna/assets/108492019/2fc777f9-0f66-4639-b503-601b49e41187)
+![Screenshot_1721119892](https://github.com/user-attachments/assets/20e56579-d67f-40f3-bc80-76ec0d9b5790)
