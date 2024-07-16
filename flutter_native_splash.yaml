@@ -1,0 +1,15 @@
+# run following commands to generate splash screen:
+# flutter clean
+# flutter pub get
+# flutter pub run flutter_native_splash:create --path=flutter_native_splash.yaml
+flutter_native_splash:
+  # ios and below android 12
+
+  color: "#FFFFFF"
+  image: assets/images/logo.png
+  # background_image: "assets/splash_screen.png"
+
+  # above android 12
+  android_12:
+    image: assets/images/android12.png
+    color: "#FFFFFF"

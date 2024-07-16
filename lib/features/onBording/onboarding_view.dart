@@ -19,7 +19,7 @@ class OnboardingView extends StatelessWidget {
               const LogoAndName(),
               40.verticalSpace,
               const BackGroundAndText(),
-              30.verticalSpace,
+              20.verticalSpace,
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
                 child: Text(

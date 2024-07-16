@@ -1,4 +1,3 @@
-import 'package:doctorna/core/helpers/font_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:doctorna/core/consts/app_colors.dart';
@@ -35,26 +34,29 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: backgroundColor ?? AppColors.kBlack,
-          // tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-          // minimumSize: const Size(100, 40),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(threeRadius ?? 16),
-              topRight: Radius.circular(threeRadius ?? 16),
-              bottomRight: Radius.circular(threeRadius ?? 16),
-              bottomLeft: Radius.circular(lastRadius ?? 16),
-            ),
+      style: ElevatedButton.styleFrom(
+        backgroundColor: backgroundColor ?? AppColors.kBlack,
+        // tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        // minimumSize: const Size(100, 40),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(threeRadius ?? 16),
+            topRight: Radius.circular(threeRadius ?? 16),
+            bottomRight: Radius.circular(threeRadius ?? 16),
+            bottomLeft: Radius.circular(lastRadius ?? 16),
           ),
-          fixedSize: Size(width.w, height.h),
         ),
-        onPressed: onPressed,
-        child: isLoading
-            ? const CircularProgressIndicator()
-            : Text(
-                text,
-                style: textStyle,
-              ));
+        fixedSize: Size(width.w, height.h),
+      ),
+      onPressed: onPressed,
+      child: isLoading
+          ? const CircularProgressIndicator(
+              color: AppColors.kWhite,
+            )
+          : Text(
+              text,
+              style: textStyle,
+            ),
+    );
   }
 }
