@@ -1,7 +1,6 @@
 import 'package:doctorna/features/home/widgets/blue_container.dart';
 import 'package:doctorna/features/home/widgets/home_bar.dart';
 import 'package:doctorna/features/home/widgets/vertical_list.dart';
-import 'package:doctorna/features/home/widgets/see_all_recommanded.dart';
 import 'package:doctorna/features/home/widgets/see_all_speciality.dart';
 import 'package:doctorna/features/home/widgets/horizontal_list.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +20,6 @@ class HomeBody extends StatelessWidget {
             BlueContainer(),
             SeeAllSpeciality(),
             HorizontalDoctorsList(),
-            // SeeAllRecommanded(),
             VerticalDoctorsList(),
           ],
         ),

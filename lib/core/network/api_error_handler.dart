@@ -1,7 +1,7 @@
 // ignore_for_file: constant_identifier_names, non_constant_identifier_names
 
 import 'package:dio/dio.dart';
-import 'package:doctorna/core/network/api_conts.dart';
+import 'package:doctorna/core/network/api_consts.dart';
 import 'package:doctorna/core/network/api_error_model.dart';
 
 enum DataSource {

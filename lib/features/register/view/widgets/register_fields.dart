@@ -16,8 +16,8 @@ class RegisterFields extends StatefulWidget {
 
 class _RegisterFieldsState extends State<RegisterFields> {
   late RegisterCubit _cubit;
-  bool obsecured = true;
-
+  bool obsecuredPassword = true;
+  bool obsecuredConfirmPassword = true;
   bool isPasswordObscureText = true;
   bool isPasswordConfirmationObscureText = true;
   bool hasLowercase = false;
@@ -102,10 +102,11 @@ class _RegisterFieldsState extends State<RegisterFields> {
               },
               controller: _cubit.passwordController,
               label: 'Password',
-              obscureText: obsecured,
+              obscureText: obsecuredPassword,
               keyBoard: TextInputType.visiblePassword,
               suffixIconShow: true,
-              suffixIconFunction: () => setState(() => obsecured = !obsecured),
+              suffixIconFunction: () =>
+                  setState(() => obsecuredPassword = !obsecuredPassword),
             ),
           ),
           15.verticalSpace,
@@ -122,7 +123,10 @@ class _RegisterFieldsState extends State<RegisterFields> {
               },
               controller: _cubit.confirmPasswordController,
               label: 'Password',
-              obscureText: obsecured,
+              obscureText: obsecuredConfirmPassword,
+              suffixIconShow: true,
+              suffixIconFunction: () => setState(
+                  () => obsecuredConfirmPassword = !obsecuredConfirmPassword),
               keyBoard: TextInputType.visiblePassword,
             ),
           ),

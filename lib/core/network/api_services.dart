@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:doctorna/core/network/api_conts.dart';
+import 'package:doctorna/core/network/api_consts.dart';
 import 'package:doctorna/features/login/data/models/login_request_model.dart';
 import 'package:doctorna/features/login/data/models/login_response_model.dart';
 import 'package:doctorna/features/register/data/models/register_request_model.dart';

@@ -43,7 +43,6 @@ class VerticalDoctorsList extends StatelessWidget {
                           'speciality',
                           style: AppFonts.regular14Black,
                         ),
-                        5.verticalSpace,
                         Row(
                           children: [
                             Icon(
