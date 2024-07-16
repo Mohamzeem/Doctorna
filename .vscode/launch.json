@@ -1,0 +1,21 @@
+
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Doctorna Dev",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main_dev.dart",
+            "args": ["--flavor", "Dev", "--target", "lib/main_prod.dart" ]
+        },
+        {
+            "name": "Doctorna Prod",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main_prod.dart",
+            "args": ["--flavor", "Prod", "--target", "lib/main_prod.dart" ]
+
+        }
+    ]
+}
