@@ -1,4 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:doctorna/core/consts/pref_keys.dart';
+import 'package:doctorna/core/helpers/shared_prefs.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class DioFactory {
@@ -16,10 +18,25 @@ class DioFactory {
         ..options.connectTimeout = timeOut
         ..options.receiveTimeout = timeOut;
       addDioInterceptor();
+      addDioHeaders();
       return dio!;
     } else {
       return dio!;
     }
+  }
+
+  static void addDioHeaders() async {
+    dio?.options.headers = {
+      'Accept': 'application/json',
+      'Authorization':
+          'Bearer ${await SharedPrefHelper.getString(PrefKeys.userToken)}'
+    };
+  }
+
+  static void refreshToken(String token) {
+    dio?.options.headers = {
+      'Authorization': 'Bearer $token',
+    };
   }
 
   static void addDioInterceptor() {

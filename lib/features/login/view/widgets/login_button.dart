@@ -35,9 +35,7 @@ class LoginButton extends StatelessWidget {
       builder: (context, state) {
         return CustomFadeInUp(
           child: CustomButton(
-            onPressed: () {
-              context.read<LoginCubit>().validateThenLogin();
-            },
+            onPressed: () => context.read<LoginCubit>().validateThenLogin(),
             text: 'Log In',
             width: 400,
             height: 50,

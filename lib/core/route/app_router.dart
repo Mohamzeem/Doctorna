@@ -1,5 +1,5 @@
 import 'package:doctorna/core/route/routes.dart';
-import 'package:doctorna/features/home/home_view.dart';
+import 'package:doctorna/features/home/view/home_view.dart';
 import 'package:doctorna/features/onBording/onboarding_view.dart';
 import 'package:doctorna/features/login/view/login_view.dart';
 import 'package:doctorna/features/register/view/register_view.dart';

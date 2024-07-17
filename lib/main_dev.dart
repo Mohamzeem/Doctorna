@@ -1,3 +1,4 @@
+import 'package:doctorna/core/app/app_globals.dart';
 import 'package:doctorna/core/app/app_view.dart';
 import 'package:doctorna/core/app/dependency_injection.dart';
 import 'package:doctorna/core/consts/app_colors.dart';
@@ -16,6 +17,7 @@ void main() async {
       statusBarIconBrightness: Brightness.dark,
     ),
   );
+  await AppGlobals.checkUserLoggedIn();
   SystemChrome.setPreferredOrientations(
           [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp])
       .then((_) => runApp(const AppView()));

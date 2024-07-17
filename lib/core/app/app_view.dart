@@ -1,3 +1,4 @@
+import 'package:doctorna/core/app/app_globals.dart';
 import 'package:doctorna/core/consts/app_colors.dart';
 import 'package:doctorna/core/route/app_router.dart';
 import 'package:doctorna/core/route/routes.dart';
@@ -23,7 +24,9 @@ class AppView extends StatelessWidget {
             scaffoldBackgroundColor: AppColors.kWhite,
           ),
           home: const OnboardingView(),
-          initialRoute: Routes.homeView,
+          initialRoute: AppGlobals.isUserLoggedIn
+              ? Routes.homeView
+              : Routes.onboardingView,
           onGenerateRoute: AppRouter().generateRoute,
         ),
       ),

@@ -23,7 +23,7 @@ class LoginCubit extends Cubit<LoginState> {
     }
   }
 
-  Future login() async {
+  void login() async {
     emit(const LoginState.loading());
     final result = await repo.login(
       LoginRequestModel(
@@ -32,7 +32,10 @@ class LoginCubit extends Cubit<LoginState> {
       ),
     );
     result.when(
-      success: (data) => emit(LoginState.success(data)),
+      success: (loginResponse) async {
+        await repo.saveUserToken(loginResponse.userData!.token!);
+        emit(LoginState.success(loginResponse));
+      },
       failure: (errorHandler) => emit(LoginState.failure(
           errMsg: errorHandler.apiErrorModel.message ?? "Error")),
     );

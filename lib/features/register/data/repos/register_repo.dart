@@ -16,7 +16,7 @@ class RegisterRepo {
       final result = await apiServices.register(model);
       return ApiResult.success(result);
     } catch (e) {
-      return ApiResult.failure(ErrorHandler.handle(e));
+      return ApiResult.failure(ErrorHandler.handle(e.toString()));
     }
   }
 }
