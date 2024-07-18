@@ -23,7 +23,7 @@ class LoginRepo {
   }
 
   Future<void> saveUserToken(String token) async {
-    await SharedPrefHelper.setData(PrefKeys.userToken, token);
+    await SharedPrefHelper.setSecuredString(PrefKeys.userToken, token);
     DioFactory.refreshToken(token);
   }
 }

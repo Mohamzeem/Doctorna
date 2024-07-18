@@ -17,4 +17,11 @@ class HomeRepo {
       return ApiResult.failure(ErrorHandler.handle(e.toString()));
     }
   }
+
+  getSpecializationById(
+      int specializationId, List<SpecializationData> allSpecializationList) {
+    return allSpecializationList
+        .firstWhere((element) => element.id == specializationId)
+        .doctorsList;
+  }
 }

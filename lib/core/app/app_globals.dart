@@ -6,7 +6,7 @@ class AppGlobals {
   static bool isUserLoggedIn = false;
 
   static checkUserLoggedIn() async {
-    String token = await SharedPrefHelper.getString(PrefKeys.userToken);
+    String token = await SharedPrefHelper.getSecuredString(PrefKeys.userToken);
     if (token.isNullOrEmpty()) {
       isUserLoggedIn = false;
     } else {

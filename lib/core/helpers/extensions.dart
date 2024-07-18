@@ -28,3 +28,7 @@ extension Navigation on BuildContext {
 extension StringExt on String? {
   bool isNullOrEmpty() => this == null || this == '';
 }
+
+extension ListExt on List? {
+  bool isNullOrEmpty() => this == null || this == [];
+}

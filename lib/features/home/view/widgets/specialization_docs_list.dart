@@ -1,12 +1,11 @@
-import 'package:doctorna/core/consts/app_colors.dart';
 import 'package:doctorna/core/helpers/font_style.dart';
+import 'package:doctorna/core/widgets/skelton_shimmer.dart';
 import 'package:doctorna/features/home/cubit/home_cubit/home_cubit.dart';
 import 'package:doctorna/features/home/cubit/home_cubit/home_state.dart';
-import 'package:doctorna/features/home/data/models/specialization_model.dart';
+import 'package:doctorna/features/home/view/widgets/specialization_docs_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shimmer/shimmer.dart';
 
 class SpecializationDoctorsList extends StatelessWidget {
   const SpecializationDoctorsList({super.key});
@@ -20,16 +19,45 @@ class SpecializationDoctorsList extends StatelessWidget {
           current is specializationSuccess,
       builder: (context, state) {
         return state.maybeWhen(
-          specializationLoading: () => Shimmer.fromColors(
-            baseColor: AppColors.kLighterGrey,
-            highlightColor: AppColors.kLighterGrey,
-            child: SizedBox(
-              height: 100.h,
+          specializationLoading: () => Padding(
+            padding: EdgeInsets.symmetric(vertical: 20.h),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 100.h,
+                  child: ListView.separated(
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    itemCount: 5,
+                    itemBuilder: (context, index) => Column(
+                      children: [
+                        SkeltonShimmer(
+                          shape: BoxShape.circle,
+                          height: 70.h,
+                          width: 70.w,
+                        ),
+                        5.verticalSpace,
+                        SkeltonShimmer(
+                          shape: BoxShape.rectangle,
+                          height: 25.h,
+                          width: 70.w,
+                        ),
+                      ],
+                    ),
+                    separatorBuilder: (context, index) {
+                      return SizedBox(width: 30.w);
+                    },
+                  ),
+                ),
+              ],
             ),
           ),
-          specializationFailure: (errorHandler) => const SizedBox.shrink(),
-          specializationSuccess: (specializationModel) {
-            var list = specializationModel.specializationData!;
+          specializationFailure: (errorHandler) => SizedBox(
+            height: 100.h,
+            child: Text(errorHandler.toString(), style: AppFonts.bold20Black),
+          ),
+          specializationSuccess: (specializationList) {
+            var list = specializationList;
             return Padding(
               padding: const EdgeInsets.symmetric(vertical: 20),
               child: SizedBox(
@@ -50,40 +78,6 @@ class SpecializationDoctorsList extends StatelessWidget {
           orElse: () => const SizedBox.shrink(),
         );
       },
-    );
-  }
-}
-
-class SpecializationDoctorsItem extends StatelessWidget {
-  final SpecializationData? item;
-  final int index;
-  const SpecializationDoctorsItem({
-    super.key,
-    required this.index,
-    required this.item,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(left: index == 0 ? 0 : 25.w),
-      child: Column(
-        children: [
-          CircleAvatar(
-            radius: 35.r,
-            backgroundColor: AppColors.kLighterGrey,
-            child: Image.asset(
-              'assets/images/speciality.png',
-              height: 55.h,
-            ),
-          ),
-          5.verticalSpace,
-          Text(
-            item!.name!,
-            style: AppFonts.regular14Black,
-          )
-        ],
-      ),
     );
   }
 }

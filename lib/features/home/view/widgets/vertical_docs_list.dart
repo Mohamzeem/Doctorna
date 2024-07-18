@@ -1,6 +1,9 @@
-import 'package:doctorna/core/consts/app_colors.dart';
-import 'package:doctorna/core/helpers/font_style.dart';
+import 'package:doctorna/core/widgets/skelton_shimmer.dart';
+import 'package:doctorna/features/home/cubit/home_cubit/home_cubit.dart';
+import 'package:doctorna/features/home/cubit/home_cubit/home_state.dart';
+import 'package:doctorna/features/home/view/widgets/vertical_docs_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class VerticalDoctorsList extends StatelessWidget {
@@ -8,63 +11,62 @@ class VerticalDoctorsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-        itemCount: 10,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: EdgeInsets.only(top: index == 0 ? 0 : 10.h),
-            child: SizedBox(
-              height: 120.h,
-              width: double.infinity,
-              child: Row(
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(10.r),
-                    height: 120.h,
-                    width: 120.w,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20.r),
-                      color: AppColors.kLighterGrey,
-                    ),
-                    child: Image.asset('assets/images/doc.png'),
+    return BlocBuilder<HomeCubit, HomeState>(
+      buildWhen: (previous, current) =>
+          current is specializationDoctorsSuccess ||
+          current is specializationDoctorsFailure ||
+          current is specializationDoctorsLoading,
+      builder: (context, state) {
+        return state.maybeWhen(
+          specializationLoading: () => Expanded(
+            child: ListView.separated(
+              itemCount: 5,
+              itemBuilder: (context, index) => Padding(
+                padding: EdgeInsets.only(top: index == 0 ? 10 : 10.h),
+                child: SizedBox(
+                  height: 120.h,
+                  child: Row(
+                    children: [
+                      SkeltonShimmer(
+                        shape: BoxShape.rectangle,
+                        height: 120.h,
+                        width: 120.w,
+                      ),
+                      25.horizontalSpace,
+                      SkeltonShimmer(
+                        shape: BoxShape.rectangle,
+                        height: 120.h,
+                        width: 220.w,
+                      ),
+                    ],
                   ),
-                  25.horizontalSpace,
-                  Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'doctor name',
-                          style: AppFonts.bold20Black,
-                        ),
-                        Text(
-                          'speciality',
-                          style: AppFonts.regular14Black,
-                        ),
-                        Row(
-                          children: [
-                            Icon(
-                              Icons.star,
-                              color: Colors.yellow.shade500,
-                            ),
-                            5.horizontalSpace,
-                            Text(
-                              '3.7 Reviews (105)',
-                              style: AppFonts.regular14Black,
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                  )
-                ],
+                ),
               ),
+              separatorBuilder: (context, index) {
+                return SizedBox(width: 10.h);
+              },
             ),
-          );
-        },
-      ),
+          ),
+          specializationDoctorsFailure: (errorHandler) => const SizedBox(
+            child: Text('sdsssssssss'),
+          ),
+          specializationDoctorsSuccess: (doctorsModel) {
+            final list = doctorsModel;
+            return Expanded(
+              child: ListView.builder(
+                itemCount: list.length,
+                itemBuilder: (context, index) {
+                  return VerticalDoctorsItem(
+                    index: index,
+                    item: list[index],
+                  );
+                },
+              ),
+            );
+          },
+          orElse: () => const SizedBox.shrink(),
+        );
+      },
     );
   }
 }
